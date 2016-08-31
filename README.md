@@ -2,8 +2,12 @@
 
 This project is my second attempt at an Android home screen.
 
-Having discovered that Pager layout is a thing, this one will be based on it,
-and will use the native swip functions of Android to activate and animate the
-screen. 
+Development Branch Update
 
-The basic ideas will remain the same. 
+Pager Implement. 
+
+Aim for 0.1 ALPHA:
+
+Task 1: Get the background properly (see original android launcher code)
+Task 2: Enable Widgets on the "main" screen
+Task 3: Enable the adding of "apps" from one screen to the other.
