@@ -1,6 +1,7 @@
 package psy23.launcher;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 //Removed to try out themes.
 public class MainActivity extends AppCompatActivity {
 //public class MainActivity extends Activity {
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+    private static Bitmap sWallpaper;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -85,7 +89,25 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+/**
+ * Removed as until such time as I understand why this doesn't work
+ *
+    private void loadWallpaper() {
+        // The first time the application is started, we load the wallpaper from
+        // the ApplicationContext
+        if (sWallpaper == null) {
+            final Drawable drawable = getWallpaper();
+            if (drawable instanceof BitmapDrawable) {
+                sWallpaper = ((BitmapDrawable) drawable).getBitmap();
+            } else {
+                throw new IllegalStateException("The wallpaper must be a BitmapDrawable.");
+            }
+        }
+        this.loadWallpaper(sWallpaper);
+    }
 
+**/
+    //********************************************************************************************//
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -121,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //********************************************************************************************//
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
@@ -141,6 +164,13 @@ public class MainActivity extends AppCompatActivity {
                 AppsGridFragment agf = new AppsGridFragment();
 
                 return agf;
+            }
+
+            if (position == 1) {
+
+                IconActivity ia = new IconActivity();
+
+                return ia;
 
             } else {
 
